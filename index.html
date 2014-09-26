@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body {
+}
+#last {
+    position:absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    left:0px;
+    right:0px;
+    bottom:0px;
+    color: black;
+    text-align:center;
+}
+#last a {
+    text-decoration: none;
+    font-style: italic;
+}
+#controls {
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+
+
+}
+* {
+    padding:0px;
+    margin:0px;
+}
+#message-container {
+    position:absolute;
+    left:100px;
+    right:160px;
+    height:30px;
+}
+#message {
+    position:absolute;
+    top:0px;
+    height: 100%;
+    width: 100%;
+    border:0px;
+    font-size: 24px;
+    font-family: helvetica;
+    background-color: rgba(0, 0, 0, 0.05);
+}   
+#send {
+    position:absolute;
+    border:none;
+    top:0px;
+    right:100px;
+    width:60px;
+    height:30px;
+    padding:0px;
+    margin:0px;
+}
+img {
+    width:100%;
+}
+#container {
+    position: absolute;
+    top:30px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#video {
+    position:absolute;
+    left:100px;
+}
+</style>
+</head>
+<body>
+<div id="controls">
+<div id="message-container">
+<input type="text" id="message" placeholder="Enter URL"/>
+</div>
+<input type="button" id="send" value="Send"/>
+</div>
+<div id="container">
+<div id="video">
+</div>
+<div id="last"><a id="lastlink"></a></div>
+</div>
+<script src="/jquery-1.10.2.min.js"></script>
+<script src="/socket.io-1.0.6.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>
