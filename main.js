@@ -29,8 +29,11 @@ $(function() {
         $('#lastlink').html(message);
         $('#lastlink').attr('href', message);
 
+        $('#video').html('');
+        $('#container').removeAttr('style');
+        
+        
         if (message.match(/youtube.com|youtu.be/)) {
-            $('#container').removeAttr('style');
             var code = message.match(/watch\?v=(.*)/)[1];
             if (!code) {
                 return;
@@ -38,8 +41,11 @@ $(function() {
             $('#video').html(
                 '<iframe width="960" height="480" src="//www.youtube.com/embed/'+code+'?autoplay=1" frameborder="0" allowfullscreen></iframe>'
             );
+        } else if (message.match(/(mp3|acc|mp4|avi|ogg)$/)) {
+            $('#video').html(
+                '<video controls="controls" width="960" height="480"><source src="'+message+'"></video>'
+            );
         } else {
-            $('#video').html('');
             $('#container').css('background-image', 'url('+message+')');
         }
 
